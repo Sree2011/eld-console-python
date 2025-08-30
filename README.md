@@ -50,6 +50,7 @@ classDiagram
     class Main {
         +main() -> None
     }
+end
 
 ```
 
