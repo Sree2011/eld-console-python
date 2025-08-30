@@ -1,7 +1,7 @@
 import Generator
 import InputLoader
 import ELDCalculator
-
+from tabulate import tabulate
 def main():
     use_csv = True  # Toggle this to True to load from CSV
     input = InputLoader.InputLoader()
@@ -13,7 +13,7 @@ def main():
         input.load_data_from_user()
 
     gen_list = input.get_generators()
-    
+
     if not gen_list:
         print("No valid generators loaded. Exiting.")
         return
@@ -21,14 +21,16 @@ def main():
     print(f"Total generators loaded: {len(gen_list)}")
 
     # Print generator details
-    input.display_generators()
+    df = input.display_generators()
 
     total_demand = 2000.0
     eld_calculator = ELDCalculator.ELDCalculator(len(gen_list), gen_list, total_demand)
 
     el_dispatch = eld_calculator.lambda_iteration()
-    for i, power in enumerate(el_dispatch):
-        print(f"Generator {i + 1} dispatched power: {power:.3f} kW")
+    P = el_dispatch[0]
+    df["Power_Dispatch"]= P
+    headers = ["Gen_ID", "Min_Capacity", "Max_Capacity", "a", "b", "c","Power_Dispatch"]
+    print(tabulate(df,headers=headers, tablefmt="simple"))  
 
 if __name__ == "__main__":
     main()

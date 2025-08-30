@@ -21,7 +21,7 @@ class InputLoader:
             generator = Generator.Generator(gen_id, min_capacity, max_capacity, a, b, c)
             self.generators.append(generator)
 
-            
+
     def load_data_from_file(self,file_path):
         data = pd.read_csv(file_path)
         for index, row in data.iterrows():
@@ -42,4 +42,5 @@ class InputLoader:
         for gen in self.generators:
             table.append([gen.gen_id, gen.min_capacity, gen.max_capacity, gen.a, gen.b, gen.c])
         headers = ["Gen_ID", "Min_Capacity", "Max_Capacity", "a", "b", "c"]
-        print(tabulate(table, headers, tablefmt="grid"))
+        df = pd.DataFrame(table, columns=headers)
+        return df
