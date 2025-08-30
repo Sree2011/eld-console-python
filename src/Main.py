@@ -1,8 +1,11 @@
-import Generator
-import InputLoader
-import ELDCalculator
+from . import Generator
+from . import InputLoader
+from . import ELDCalculator
 from tabulate import tabulate
 def main():
+    """
+    Main function to run the ELD calculation.
+    """
     use_csv = True  # Toggle this to True to load from CSV
     input = InputLoader.InputLoader()
 

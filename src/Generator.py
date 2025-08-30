@@ -8,6 +8,21 @@ class Generator:
             self.c = c
     
     def calculate_cost(self,power):
+        
+        """
+        Calculate the cost for a given power output.
+
+        Parameters:
+        -----------
+        `power (float)`: 
+            The power output of the generator.
+
+        Returns:
+        --------
+        `float`: 
+            The cost associated with the given power output.
+        """
+
         return (self.a * (power * power) + (self.b * power) + self.c)
     
 

@@ -1,4 +1,4 @@
-import Generator
+from . import Generator
 import pandas as pd
 from tabulate import tabulate
 class InputLoader:
