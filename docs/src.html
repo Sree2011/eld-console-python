@@ -63,6 +63,48 @@ for a set of power generators based on their cost functions and operational cons
 <li>ELDCalculator: Performs the ELD calculation using the lambda iteration method.</li>
 <li>Main: The main script to run the ELD calculation and display results.</li>
 </ul>
+
+<p>```mermaid
+classDiagram
+    class Generator {
+        +gen_id: str
+        +min_capacity: float
+        +max_capacity: float
+        +a: float
+        +b: float
+        +c: float
+        +calculate_cost(power: float) -> float
+        +validate_power(power: float) -> float
+    }</p>
+
+<pre><code>class InputLoader {
+    +generators: List[Generator]
+    +load_data_from_user() -&gt; None
+    +load_data_from_file(file_path: str) -&gt; None
+    +get_generators() -&gt; List[Generator]
+    +display_generators() -&gt; pd.DataFrame
+}
+
+class ELDCalculator {
+    +gen_lambda: float
+    +gen_array: List[Generator]
+    +num_generators: int
+    +tot_demand: float
+    +tolerance: float
+    +max_iterations: int
+    +lambda_iteration() -&gt; Tuple[List[float], float, int]
+}
+
+class Main {
+    +main() -&gt; None
+}
+</code></pre>
+
+<p>Relationships:
+    InputLoader "1" -- "many" Generator : contains
+    ELDCalculator "1" -- "many" Generator : uses
+    Main "1" -- "1" InputLoader : uses
+    Main "1" -- "1" ELDCalculator : uses</p>
 </div>
 
                         <input id="mod-src-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -87,8 +129,47 @@ for a set of power generators based on their cost functions and operational cons
 </span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">- Main: The main script to run the ELD calculation and display results.</span>
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">```mermaid</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">classDiagram</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">    class Generator {</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="sd">        +gen_id: str</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd">        +min_capacity: float</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="sd">        +max_capacity: float</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">        +a: float</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="sd">        +b: float</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">        +c: float</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">        +calculate_cost(power: float) -&gt; float</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">        +validate_power(power: float) -&gt; float</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">    }</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">    class InputLoader {</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">        +generators: List[Generator]</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a><span class="sd">        +load_data_from_user() -&gt; None</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="sd">        +load_data_from_file(file_path: str) -&gt; None</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a><span class="sd">        +get_generators() -&gt; List[Generator]</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="sd">        +display_generators() -&gt; pd.DataFrame</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">    }</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">    class ELDCalculator {</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">        +gen_lambda: float</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a><span class="sd">        +gen_array: List[Generator]</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a><span class="sd">        +num_generators: int</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="sd">        +tot_demand: float</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a><span class="sd">        +tolerance: float</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="sd">        +max_iterations: int</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="sd">        +lambda_iteration() -&gt; Tuple[List[float], float, int]</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">    }</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a><span class="sd">    class Main {</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="sd">        +main() -&gt; None</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a><span class="sd">    }</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a><span class="sd">Relationships:</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a><span class="sd">    InputLoader &quot;1&quot; -- &quot;many&quot; Generator : contains</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">    ELDCalculator &quot;1&quot; -- &quot;many&quot; Generator : uses</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="sd">    Main &quot;1&quot; -- &quot;1&quot; InputLoader : uses</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="sd">    Main &quot;1&quot; -- &quot;1&quot; ELDCalculator : uses</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span></pre></div>
 
 
