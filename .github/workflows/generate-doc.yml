@@ -18,7 +18,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install pdoc
-        run: pip install pdoc
+        run: |
+            pip install pdoc
+            pip install tabulate
+            pip install pandas
 
       - name: Generate documentation
         run: pdoc src -o docs
