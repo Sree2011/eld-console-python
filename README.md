@@ -9,9 +9,50 @@ Economic Load Dispatch console based application using python
 
 # Python documentation
 
-[Generator](./docs/src/Generator.html)
-[InputLoader](./docs/src/InputLoader.html)
-[ELDCalculator](./docs/src/ELDCalculator.html)
+1. [Generator](./docs/src/Generator.html)
+2. [InputLoader](./docs/src/InputLoader.html)
+3. [ELDCalculator](./docs/src/ELDCalculator.html)
+
+
+# Class Diagram
+
+```mermaid
+classDiagram
+    class Generator {
+        +gen_id: str
+        +min_capacity: float
+        +max_capacity: float
+        +a: float
+        +b: float
+        +c: float
+        +calculate_cost(power: float) -> float
+        +validate_power(power: float) -> float
+    }
+
+    class InputLoader {
+        +generators: List[Generator]
+        +load_data_from_user() -> None
+        +load_data_from_file(file_path: str) -> None
+        +get_generators() -> List[Generator]
+        +display_generators() -> pd.DataFrame
+    }
+
+    class ELDCalculator {
+        +gen_lambda: float
+        +gen_array: List[Generator]
+        +num_generators: int
+        +tot_demand: float
+        +tolerance: float
+        +max_iterations: int
+        +lambda_iteration() -> Tuple[List[float], float, int]
+    }
+
+    class Main {
+        +main() -> None
+    }
+
+```
+
 
 # References
 [1] Power System Analysis by Hadi Saadat, 2010 edition
