@@ -19,6 +19,7 @@ Economic Load Dispatch console based application using python
 1. [Generator](./docs/src/Generator.html)
 2. [InputLoader](./docs/src/InputLoader.html)
 3. [ELDCalculator](./docs/src/ELDCalculator.html)
+4. [Main](./docs/src/Main.html)
 
 
 # Class Diagram
@@ -57,6 +58,12 @@ classDiagram
     class Main {
         +main() -> None
     }
+
+
+    Main -- ELDCalculator : uses
+    Main -- InputLoader : uses
+    Main -- Generator : uses
+    InputLoader -- Generator : uses
 end
 
 ```
