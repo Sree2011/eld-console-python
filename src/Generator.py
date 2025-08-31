@@ -13,8 +13,8 @@ class Generator:
     
     Methods:
     --------
-        - `calculate_cost(power)`: Calculate the cost for a given power output.
-        - `validate_power(power)`: Validate if the given power is within the generator's capacity limits.
+    - `calculate_cost(power)`: Calculate the cost for a given power output.
+    - `validate_power(power)`: Validate if the given power is within the generator's capacity limits.
     """
     def __init__(self,gen_id,min_capacity,max_capacity,a,b,c):
         """
@@ -22,12 +22,12 @@ class Generator:
 
         Parameters:
         -----------
-            - `gen_id (str)`: The unique identifier for the generator.
-            - `min_capacity (float)`: The minimum capacity of the generator.
-            - `max_capacity (float)`:The maximum capacity of the generator.
-            - `a (float)`: The quadratic cost coefficient.
-            - `b (float)`: The linear cost coefficient.
-            - `c (float)`: The constant cost coefficient.
+        - `gen_id (str)`: The unique identifier for the generator.
+        - `min_capacity (float)`: The minimum capacity of the generator.
+        - `max_capacity (float)`:The maximum capacity of the generator.
+        - `a (float)`: The quadratic cost coefficient.
+        - `b (float)`: The linear cost coefficient.
+        - `c (float)`: The constant cost coefficient.
 
         Returns:
         --------
