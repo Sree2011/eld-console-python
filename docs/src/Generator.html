@@ -103,52 +103,60 @@
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">        None</span>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
 </span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>    
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="w">        </span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">        Calculate the cost for a given power output.</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
-</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">        Parameters:</span>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">        -----------</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="sd">            The power output of the generator.</span>
-</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>
-</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="sd">        Returns:</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">        --------</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a><span class="sd">        `float`: </span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">            The cost associated with the given power output.</span>
-</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>
-</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>    
-</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>
-</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
-</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a><span class="sd">        Parameters:</span>
-</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a><span class="sd">        -----------</span>
-</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a><span class="sd">            The power output to validate.</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a><span class="sd">        Returns:</span>
-</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a><span class="sd">        --------</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a><span class="sd">        `float`: </span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
-</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
-</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a>            <span class="k">return</span> <span class="n">power</span>
-</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a>        
-</span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a>    
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Generator ID&quot;&quot;&quot;</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Minimum Capacity&quot;&quot;&quot;</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Maximum Capacity&quot;&quot;&quot;</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient a&quot;&quot;&quot;</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient b&quot;&quot;&quot;</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient c&quot;&quot;&quot;</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>        
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>    
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a><span class="w">        </span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">        Calculate the cost for a given power output.</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">        Parameters:</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">        -----------</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a><span class="sd">            The power output of the generator.</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a><span class="sd">        Returns:</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="sd">        --------</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="sd">        `float`: </span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">            The cost associated with the given power output.</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>    
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="sd">        Parameters:</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="sd">        -----------</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="sd">            The power output to validate.</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a><span class="sd">        Returns:</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a><span class="sd">        --------</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a><span class="sd">        `float`: </span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos">66</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos">67</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos">68</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos">69</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos">70</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos">71</span></a>            <span class="k">return</span> <span class="n">power</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos">72</span></a>        
+</span><span id="L-73"><a href="#L-73"><span class="linenos">73</span></a>    
 </span></pre></div>
 
 
@@ -183,50 +191,58 @@
 </span><span id="Generator-18"><a href="#Generator-18"><span class="linenos">18</span></a><span class="sd">        None</span>
 </span><span id="Generator-19"><a href="#Generator-19"><span class="linenos">19</span></a>
 </span><span id="Generator-20"><a href="#Generator-20"><span class="linenos">20</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator-21"><a href="#Generator-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
-</span><span id="Generator-22"><a href="#Generator-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
-</span><span id="Generator-23"><a href="#Generator-23"><span class="linenos">23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
-</span><span id="Generator-24"><a href="#Generator-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-</span><span id="Generator-25"><a href="#Generator-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="Generator-26"><a href="#Generator-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
-</span><span id="Generator-27"><a href="#Generator-27"><span class="linenos">27</span></a>    
-</span><span id="Generator-28"><a href="#Generator-28"><span class="linenos">28</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="Generator-29"><a href="#Generator-29"><span class="linenos">29</span></a><span class="w">        </span>
-</span><span id="Generator-30"><a href="#Generator-30"><span class="linenos">30</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Generator-31"><a href="#Generator-31"><span class="linenos">31</span></a><span class="sd">        Calculate the cost for a given power output.</span>
-</span><span id="Generator-32"><a href="#Generator-32"><span class="linenos">32</span></a>
-</span><span id="Generator-33"><a href="#Generator-33"><span class="linenos">33</span></a><span class="sd">        Parameters:</span>
-</span><span id="Generator-34"><a href="#Generator-34"><span class="linenos">34</span></a><span class="sd">        -----------</span>
-</span><span id="Generator-35"><a href="#Generator-35"><span class="linenos">35</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="Generator-36"><a href="#Generator-36"><span class="linenos">36</span></a><span class="sd">            The power output of the generator.</span>
-</span><span id="Generator-37"><a href="#Generator-37"><span class="linenos">37</span></a>
-</span><span id="Generator-38"><a href="#Generator-38"><span class="linenos">38</span></a><span class="sd">        Returns:</span>
-</span><span id="Generator-39"><a href="#Generator-39"><span class="linenos">39</span></a><span class="sd">        --------</span>
-</span><span id="Generator-40"><a href="#Generator-40"><span class="linenos">40</span></a><span class="sd">        `float`: </span>
-</span><span id="Generator-41"><a href="#Generator-41"><span class="linenos">41</span></a><span class="sd">            The cost associated with the given power output.</span>
-</span><span id="Generator-42"><a href="#Generator-42"><span class="linenos">42</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator-43"><a href="#Generator-43"><span class="linenos">43</span></a>
-</span><span id="Generator-44"><a href="#Generator-44"><span class="linenos">44</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
-</span><span id="Generator-45"><a href="#Generator-45"><span class="linenos">45</span></a>    
-</span><span id="Generator-46"><a href="#Generator-46"><span class="linenos">46</span></a>
-</span><span id="Generator-47"><a href="#Generator-47"><span class="linenos">47</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="Generator-48"><a href="#Generator-48"><span class="linenos">48</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Generator-49"><a href="#Generator-49"><span class="linenos">49</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
-</span><span id="Generator-50"><a href="#Generator-50"><span class="linenos">50</span></a><span class="sd">        Parameters:</span>
-</span><span id="Generator-51"><a href="#Generator-51"><span class="linenos">51</span></a><span class="sd">        -----------</span>
-</span><span id="Generator-52"><a href="#Generator-52"><span class="linenos">52</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="Generator-53"><a href="#Generator-53"><span class="linenos">53</span></a><span class="sd">            The power output to validate.</span>
-</span><span id="Generator-54"><a href="#Generator-54"><span class="linenos">54</span></a><span class="sd">        Returns:</span>
-</span><span id="Generator-55"><a href="#Generator-55"><span class="linenos">55</span></a><span class="sd">        --------</span>
-</span><span id="Generator-56"><a href="#Generator-56"><span class="linenos">56</span></a><span class="sd">        `float`: </span>
-</span><span id="Generator-57"><a href="#Generator-57"><span class="linenos">57</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
-</span><span id="Generator-58"><a href="#Generator-58"><span class="linenos">58</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator-59"><a href="#Generator-59"><span class="linenos">59</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
-</span><span id="Generator-60"><a href="#Generator-60"><span class="linenos">60</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
-</span><span id="Generator-61"><a href="#Generator-61"><span class="linenos">61</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
-</span><span id="Generator-62"><a href="#Generator-62"><span class="linenos">62</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
-</span><span id="Generator-63"><a href="#Generator-63"><span class="linenos">63</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Generator-64"><a href="#Generator-64"><span class="linenos">64</span></a>            <span class="k">return</span> <span class="n">power</span>
+</span><span id="Generator-21"><a href="#Generator-21"><span class="linenos">21</span></a>
+</span><span id="Generator-22"><a href="#Generator-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
+</span><span id="Generator-23"><a href="#Generator-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Generator ID&quot;&quot;&quot;</span>
+</span><span id="Generator-24"><a href="#Generator-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
+</span><span id="Generator-25"><a href="#Generator-25"><span class="linenos">25</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Minimum Capacity&quot;&quot;&quot;</span>
+</span><span id="Generator-26"><a href="#Generator-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
+</span><span id="Generator-27"><a href="#Generator-27"><span class="linenos">27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Maximum Capacity&quot;&quot;&quot;</span>
+</span><span id="Generator-28"><a href="#Generator-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+</span><span id="Generator-29"><a href="#Generator-29"><span class="linenos">29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient a&quot;&quot;&quot;</span>
+</span><span id="Generator-30"><a href="#Generator-30"><span class="linenos">30</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+</span><span id="Generator-31"><a href="#Generator-31"><span class="linenos">31</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient b&quot;&quot;&quot;</span>
+</span><span id="Generator-32"><a href="#Generator-32"><span class="linenos">32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</span><span id="Generator-33"><a href="#Generator-33"><span class="linenos">33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient c&quot;&quot;&quot;</span>
+</span><span id="Generator-34"><a href="#Generator-34"><span class="linenos">34</span></a>        
+</span><span id="Generator-35"><a href="#Generator-35"><span class="linenos">35</span></a>    
+</span><span id="Generator-36"><a href="#Generator-36"><span class="linenos">36</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="Generator-37"><a href="#Generator-37"><span class="linenos">37</span></a><span class="w">        </span>
+</span><span id="Generator-38"><a href="#Generator-38"><span class="linenos">38</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Generator-39"><a href="#Generator-39"><span class="linenos">39</span></a><span class="sd">        Calculate the cost for a given power output.</span>
+</span><span id="Generator-40"><a href="#Generator-40"><span class="linenos">40</span></a>
+</span><span id="Generator-41"><a href="#Generator-41"><span class="linenos">41</span></a><span class="sd">        Parameters:</span>
+</span><span id="Generator-42"><a href="#Generator-42"><span class="linenos">42</span></a><span class="sd">        -----------</span>
+</span><span id="Generator-43"><a href="#Generator-43"><span class="linenos">43</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="Generator-44"><a href="#Generator-44"><span class="linenos">44</span></a><span class="sd">            The power output of the generator.</span>
+</span><span id="Generator-45"><a href="#Generator-45"><span class="linenos">45</span></a>
+</span><span id="Generator-46"><a href="#Generator-46"><span class="linenos">46</span></a><span class="sd">        Returns:</span>
+</span><span id="Generator-47"><a href="#Generator-47"><span class="linenos">47</span></a><span class="sd">        --------</span>
+</span><span id="Generator-48"><a href="#Generator-48"><span class="linenos">48</span></a><span class="sd">        `float`: </span>
+</span><span id="Generator-49"><a href="#Generator-49"><span class="linenos">49</span></a><span class="sd">            The cost associated with the given power output.</span>
+</span><span id="Generator-50"><a href="#Generator-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Generator-51"><a href="#Generator-51"><span class="linenos">51</span></a>
+</span><span id="Generator-52"><a href="#Generator-52"><span class="linenos">52</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+</span><span id="Generator-53"><a href="#Generator-53"><span class="linenos">53</span></a>    
+</span><span id="Generator-54"><a href="#Generator-54"><span class="linenos">54</span></a>
+</span><span id="Generator-55"><a href="#Generator-55"><span class="linenos">55</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="Generator-56"><a href="#Generator-56"><span class="linenos">56</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Generator-57"><a href="#Generator-57"><span class="linenos">57</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
+</span><span id="Generator-58"><a href="#Generator-58"><span class="linenos">58</span></a><span class="sd">        Parameters:</span>
+</span><span id="Generator-59"><a href="#Generator-59"><span class="linenos">59</span></a><span class="sd">        -----------</span>
+</span><span id="Generator-60"><a href="#Generator-60"><span class="linenos">60</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="Generator-61"><a href="#Generator-61"><span class="linenos">61</span></a><span class="sd">            The power output to validate.</span>
+</span><span id="Generator-62"><a href="#Generator-62"><span class="linenos">62</span></a><span class="sd">        Returns:</span>
+</span><span id="Generator-63"><a href="#Generator-63"><span class="linenos">63</span></a><span class="sd">        --------</span>
+</span><span id="Generator-64"><a href="#Generator-64"><span class="linenos">64</span></a><span class="sd">        `float`: </span>
+</span><span id="Generator-65"><a href="#Generator-65"><span class="linenos">65</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
+</span><span id="Generator-66"><a href="#Generator-66"><span class="linenos">66</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Generator-67"><a href="#Generator-67"><span class="linenos">67</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
+</span><span id="Generator-68"><a href="#Generator-68"><span class="linenos">68</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
+</span><span id="Generator-69"><a href="#Generator-69"><span class="linenos">69</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
+</span><span id="Generator-70"><a href="#Generator-70"><span class="linenos">70</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
+</span><span id="Generator-71"><a href="#Generator-71"><span class="linenos">71</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Generator-72"><a href="#Generator-72"><span class="linenos">72</span></a>            <span class="k">return</span> <span class="n">power</span>
 </span></pre></div>
 
 
@@ -260,12 +276,19 @@
 </span><span id="Generator.__init__-18"><a href="#Generator.__init__-18"><span class="linenos">18</span></a><span class="sd">        None</span>
 </span><span id="Generator.__init__-19"><a href="#Generator.__init__-19"><span class="linenos">19</span></a>
 </span><span id="Generator.__init__-20"><a href="#Generator.__init__-20"><span class="linenos">20</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator.__init__-21"><a href="#Generator.__init__-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
-</span><span id="Generator.__init__-22"><a href="#Generator.__init__-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
-</span><span id="Generator.__init__-23"><a href="#Generator.__init__-23"><span class="linenos">23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
-</span><span id="Generator.__init__-24"><a href="#Generator.__init__-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-</span><span id="Generator.__init__-25"><a href="#Generator.__init__-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="Generator.__init__-26"><a href="#Generator.__init__-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</span><span id="Generator.__init__-21"><a href="#Generator.__init__-21"><span class="linenos">21</span></a>
+</span><span id="Generator.__init__-22"><a href="#Generator.__init__-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">gen_id</span> <span class="o">=</span> <span class="n">gen_id</span>
+</span><span id="Generator.__init__-23"><a href="#Generator.__init__-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Generator ID&quot;&quot;&quot;</span>
+</span><span id="Generator.__init__-24"><a href="#Generator.__init__-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span> <span class="o">=</span> <span class="n">min_capacity</span>
+</span><span id="Generator.__init__-25"><a href="#Generator.__init__-25"><span class="linenos">25</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Minimum Capacity&quot;&quot;&quot;</span>
+</span><span id="Generator.__init__-26"><a href="#Generator.__init__-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span> <span class="o">=</span> <span class="n">max_capacity</span>
+</span><span id="Generator.__init__-27"><a href="#Generator.__init__-27"><span class="linenos">27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Maximum Capacity&quot;&quot;&quot;</span>
+</span><span id="Generator.__init__-28"><a href="#Generator.__init__-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+</span><span id="Generator.__init__-29"><a href="#Generator.__init__-29"><span class="linenos">29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient a&quot;&quot;&quot;</span>
+</span><span id="Generator.__init__-30"><a href="#Generator.__init__-30"><span class="linenos">30</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+</span><span id="Generator.__init__-31"><a href="#Generator.__init__-31"><span class="linenos">31</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient b&quot;&quot;&quot;</span>
+</span><span id="Generator.__init__-32"><a href="#Generator.__init__-32"><span class="linenos">32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+</span><span id="Generator.__init__-33"><a href="#Generator.__init__-33"><span class="linenos">33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cost coefficient c&quot;&quot;&quot;</span>
 </span></pre></div>
 
 
@@ -296,7 +319,9 @@
     </div>
     <a class="headerlink" href="#Generator.gen_id"></a>
     
-    
+            <div class="docstring"><p>Generator ID</p>
+</div>
+
 
                             </div>
                             <div id="Generator.min_capacity" class="classattr">
@@ -307,7 +332,9 @@
     </div>
     <a class="headerlink" href="#Generator.min_capacity"></a>
     
-    
+            <div class="docstring"><p>Minimum Capacity</p>
+</div>
+
 
                             </div>
                             <div id="Generator.max_capacity" class="classattr">
@@ -318,7 +345,9 @@
     </div>
     <a class="headerlink" href="#Generator.max_capacity"></a>
     
-    
+            <div class="docstring"><p>Maximum Capacity</p>
+</div>
+
 
                             </div>
                             <div id="Generator.a" class="classattr">
@@ -329,7 +358,9 @@
     </div>
     <a class="headerlink" href="#Generator.a"></a>
     
-    
+            <div class="docstring"><p>Cost coefficient a</p>
+</div>
+
 
                             </div>
                             <div id="Generator.b" class="classattr">
@@ -340,7 +371,9 @@
     </div>
     <a class="headerlink" href="#Generator.b"></a>
     
-    
+            <div class="docstring"><p>Cost coefficient b</p>
+</div>
+
 
                             </div>
                             <div id="Generator.c" class="classattr">
@@ -351,7 +384,9 @@
     </div>
     <a class="headerlink" href="#Generator.c"></a>
     
-    
+            <div class="docstring"><p>Cost coefficient c</p>
+</div>
+
 
                             </div>
                             <div id="Generator.calculate_cost" class="classattr">
@@ -365,23 +400,23 @@
 
     </div>
     <a class="headerlink" href="#Generator.calculate_cost"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Generator.calculate_cost-28"><a href="#Generator.calculate_cost-28"><span class="linenos">28</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="Generator.calculate_cost-29"><a href="#Generator.calculate_cost-29"><span class="linenos">29</span></a><span class="w">        </span>
-</span><span id="Generator.calculate_cost-30"><a href="#Generator.calculate_cost-30"><span class="linenos">30</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Generator.calculate_cost-31"><a href="#Generator.calculate_cost-31"><span class="linenos">31</span></a><span class="sd">        Calculate the cost for a given power output.</span>
-</span><span id="Generator.calculate_cost-32"><a href="#Generator.calculate_cost-32"><span class="linenos">32</span></a>
-</span><span id="Generator.calculate_cost-33"><a href="#Generator.calculate_cost-33"><span class="linenos">33</span></a><span class="sd">        Parameters:</span>
-</span><span id="Generator.calculate_cost-34"><a href="#Generator.calculate_cost-34"><span class="linenos">34</span></a><span class="sd">        -----------</span>
-</span><span id="Generator.calculate_cost-35"><a href="#Generator.calculate_cost-35"><span class="linenos">35</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="Generator.calculate_cost-36"><a href="#Generator.calculate_cost-36"><span class="linenos">36</span></a><span class="sd">            The power output of the generator.</span>
-</span><span id="Generator.calculate_cost-37"><a href="#Generator.calculate_cost-37"><span class="linenos">37</span></a>
-</span><span id="Generator.calculate_cost-38"><a href="#Generator.calculate_cost-38"><span class="linenos">38</span></a><span class="sd">        Returns:</span>
-</span><span id="Generator.calculate_cost-39"><a href="#Generator.calculate_cost-39"><span class="linenos">39</span></a><span class="sd">        --------</span>
-</span><span id="Generator.calculate_cost-40"><a href="#Generator.calculate_cost-40"><span class="linenos">40</span></a><span class="sd">        `float`: </span>
-</span><span id="Generator.calculate_cost-41"><a href="#Generator.calculate_cost-41"><span class="linenos">41</span></a><span class="sd">            The cost associated with the given power output.</span>
-</span><span id="Generator.calculate_cost-42"><a href="#Generator.calculate_cost-42"><span class="linenos">42</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator.calculate_cost-43"><a href="#Generator.calculate_cost-43"><span class="linenos">43</span></a>
-</span><span id="Generator.calculate_cost-44"><a href="#Generator.calculate_cost-44"><span class="linenos">44</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Generator.calculate_cost-36"><a href="#Generator.calculate_cost-36"><span class="linenos">36</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="Generator.calculate_cost-37"><a href="#Generator.calculate_cost-37"><span class="linenos">37</span></a><span class="w">        </span>
+</span><span id="Generator.calculate_cost-38"><a href="#Generator.calculate_cost-38"><span class="linenos">38</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Generator.calculate_cost-39"><a href="#Generator.calculate_cost-39"><span class="linenos">39</span></a><span class="sd">        Calculate the cost for a given power output.</span>
+</span><span id="Generator.calculate_cost-40"><a href="#Generator.calculate_cost-40"><span class="linenos">40</span></a>
+</span><span id="Generator.calculate_cost-41"><a href="#Generator.calculate_cost-41"><span class="linenos">41</span></a><span class="sd">        Parameters:</span>
+</span><span id="Generator.calculate_cost-42"><a href="#Generator.calculate_cost-42"><span class="linenos">42</span></a><span class="sd">        -----------</span>
+</span><span id="Generator.calculate_cost-43"><a href="#Generator.calculate_cost-43"><span class="linenos">43</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="Generator.calculate_cost-44"><a href="#Generator.calculate_cost-44"><span class="linenos">44</span></a><span class="sd">            The power output of the generator.</span>
+</span><span id="Generator.calculate_cost-45"><a href="#Generator.calculate_cost-45"><span class="linenos">45</span></a>
+</span><span id="Generator.calculate_cost-46"><a href="#Generator.calculate_cost-46"><span class="linenos">46</span></a><span class="sd">        Returns:</span>
+</span><span id="Generator.calculate_cost-47"><a href="#Generator.calculate_cost-47"><span class="linenos">47</span></a><span class="sd">        --------</span>
+</span><span id="Generator.calculate_cost-48"><a href="#Generator.calculate_cost-48"><span class="linenos">48</span></a><span class="sd">        `float`: </span>
+</span><span id="Generator.calculate_cost-49"><a href="#Generator.calculate_cost-49"><span class="linenos">49</span></a><span class="sd">            The cost associated with the given power output.</span>
+</span><span id="Generator.calculate_cost-50"><a href="#Generator.calculate_cost-50"><span class="linenos">50</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Generator.calculate_cost-51"><a href="#Generator.calculate_cost-51"><span class="linenos">51</span></a>
+</span><span id="Generator.calculate_cost-52"><a href="#Generator.calculate_cost-52"><span class="linenos">52</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -411,24 +446,24 @@
 
     </div>
     <a class="headerlink" href="#Generator.validate_power"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Generator.validate_power-47"><a href="#Generator.validate_power-47"><span class="linenos">47</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
-</span><span id="Generator.validate_power-48"><a href="#Generator.validate_power-48"><span class="linenos">48</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Generator.validate_power-49"><a href="#Generator.validate_power-49"><span class="linenos">49</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
-</span><span id="Generator.validate_power-50"><a href="#Generator.validate_power-50"><span class="linenos">50</span></a><span class="sd">        Parameters:</span>
-</span><span id="Generator.validate_power-51"><a href="#Generator.validate_power-51"><span class="linenos">51</span></a><span class="sd">        -----------</span>
-</span><span id="Generator.validate_power-52"><a href="#Generator.validate_power-52"><span class="linenos">52</span></a><span class="sd">        `power (float)`: </span>
-</span><span id="Generator.validate_power-53"><a href="#Generator.validate_power-53"><span class="linenos">53</span></a><span class="sd">            The power output to validate.</span>
-</span><span id="Generator.validate_power-54"><a href="#Generator.validate_power-54"><span class="linenos">54</span></a><span class="sd">        Returns:</span>
-</span><span id="Generator.validate_power-55"><a href="#Generator.validate_power-55"><span class="linenos">55</span></a><span class="sd">        --------</span>
-</span><span id="Generator.validate_power-56"><a href="#Generator.validate_power-56"><span class="linenos">56</span></a><span class="sd">        `float`: </span>
-</span><span id="Generator.validate_power-57"><a href="#Generator.validate_power-57"><span class="linenos">57</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
-</span><span id="Generator.validate_power-58"><a href="#Generator.validate_power-58"><span class="linenos">58</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Generator.validate_power-59"><a href="#Generator.validate_power-59"><span class="linenos">59</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
-</span><span id="Generator.validate_power-60"><a href="#Generator.validate_power-60"><span class="linenos">60</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
-</span><span id="Generator.validate_power-61"><a href="#Generator.validate_power-61"><span class="linenos">61</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
-</span><span id="Generator.validate_power-62"><a href="#Generator.validate_power-62"><span class="linenos">62</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
-</span><span id="Generator.validate_power-63"><a href="#Generator.validate_power-63"><span class="linenos">63</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Generator.validate_power-64"><a href="#Generator.validate_power-64"><span class="linenos">64</span></a>            <span class="k">return</span> <span class="n">power</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Generator.validate_power-55"><a href="#Generator.validate_power-55"><span class="linenos">55</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">validate_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">power</span><span class="p">):</span>
+</span><span id="Generator.validate_power-56"><a href="#Generator.validate_power-56"><span class="linenos">56</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Generator.validate_power-57"><a href="#Generator.validate_power-57"><span class="linenos">57</span></a><span class="sd">        Validate if the given power is within the generator&#39;s capacity limits.</span>
+</span><span id="Generator.validate_power-58"><a href="#Generator.validate_power-58"><span class="linenos">58</span></a><span class="sd">        Parameters:</span>
+</span><span id="Generator.validate_power-59"><a href="#Generator.validate_power-59"><span class="linenos">59</span></a><span class="sd">        -----------</span>
+</span><span id="Generator.validate_power-60"><a href="#Generator.validate_power-60"><span class="linenos">60</span></a><span class="sd">        `power (float)`: </span>
+</span><span id="Generator.validate_power-61"><a href="#Generator.validate_power-61"><span class="linenos">61</span></a><span class="sd">            The power output to validate.</span>
+</span><span id="Generator.validate_power-62"><a href="#Generator.validate_power-62"><span class="linenos">62</span></a><span class="sd">        Returns:</span>
+</span><span id="Generator.validate_power-63"><a href="#Generator.validate_power-63"><span class="linenos">63</span></a><span class="sd">        --------</span>
+</span><span id="Generator.validate_power-64"><a href="#Generator.validate_power-64"><span class="linenos">64</span></a><span class="sd">        `float`: </span>
+</span><span id="Generator.validate_power-65"><a href="#Generator.validate_power-65"><span class="linenos">65</span></a><span class="sd">            The validated power output, adjusted to be within capacity limits if necessary.</span>
+</span><span id="Generator.validate_power-66"><a href="#Generator.validate_power-66"><span class="linenos">66</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Generator.validate_power-67"><a href="#Generator.validate_power-67"><span class="linenos">67</span></a>        <span class="k">if</span> <span class="p">(</span><span class="n">power</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span><span class="p">):</span>
+</span><span id="Generator.validate_power-68"><a href="#Generator.validate_power-68"><span class="linenos">68</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_capacity</span>
+</span><span id="Generator.validate_power-69"><a href="#Generator.validate_power-69"><span class="linenos">69</span></a>        <span class="k">elif</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span><span class="p">):</span>
+</span><span id="Generator.validate_power-70"><a href="#Generator.validate_power-70"><span class="linenos">70</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_capacity</span>
+</span><span id="Generator.validate_power-71"><a href="#Generator.validate_power-71"><span class="linenos">71</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Generator.validate_power-72"><a href="#Generator.validate_power-72"><span class="linenos">72</span></a>            <span class="k">return</span> <span class="n">power</span>
 </span></pre></div>
 
 
