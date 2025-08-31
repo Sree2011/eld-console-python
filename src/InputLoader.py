@@ -50,12 +50,15 @@ class InputLoader:
         """
         Load generator data from a CSV file.
         The CSV file should have the following columns:
-            - Gen_ID
-            - Min_Capacity
-            - Max_Capacity
-            - a
-            - b
-            - c
+            <ul>
+            <li>Gen_ID</li>
+            <li>Min_Capacity</li>
+            <li>Max_Capacity</li>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            </ul>
+            
         Parameters:
         -----------
         `file_path (str)`: Path to the CSV file.
