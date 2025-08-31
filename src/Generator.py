@@ -17,12 +17,20 @@ class Generator:
         None
 
         """
+
         self.gen_id = gen_id
+        """Generator ID"""
         self.min_capacity = min_capacity
+        """Minimum Capacity"""
         self.max_capacity = max_capacity
+        """Maximum Capacity"""
         self.a = a
+        """Cost coefficient a"""
         self.b = b
+        """Cost coefficient b"""
         self.c = c
+        """Cost coefficient c"""
+        
     
     def calculate_cost(self,power):
         
