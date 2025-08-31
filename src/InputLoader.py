@@ -2,6 +2,22 @@ from . import Generator
 import pandas as pd
 from tabulate import tabulate
 class InputLoader:
+    """
+    Class to load input data for generators.
+    Can load data from user input or from a CSV file.
+    
+    Attributes:
+    -----------
+    generators (list): List of Generator objects.
+    
+    Methods:
+    --------
+    load_data_from_user(): Load generator data from user input.
+    load_data_from_file(file_path): Load generator data from a CSV file.
+    get_generators(): Return the list of Generator objects.
+    display_generators(): Display the generator data in a tabular format.
+    """
+
     def __init__(self):
         self.generators = []
         
