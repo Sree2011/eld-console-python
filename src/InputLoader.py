@@ -19,6 +19,9 @@ class InputLoader:
     """
 
     def __init__(self):
+        """
+        Initialize the InputLoader with an empty list of generators.
+        """
         self.generators = []
         
 
