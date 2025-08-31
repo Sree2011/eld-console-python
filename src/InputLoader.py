@@ -8,14 +8,14 @@ class InputLoader:
     
     Attributes:
     -----------
-    generators (list): List of Generator objects.
+    `generators (list)`: List of Generator objects.
     
     Methods:
     --------
-        - load_data_from_user(): Load generator data from user input.
-        - load_data_from_file(file_path): Load generator data from a CSV file.
-        - get_generators(): Return the list of Generator objects.
-        - display_generators(): Display the generator data in a tabular format.
+        - `load_data_from_user()`: Load generator data from user input.
+        - `load_data_from_file(file_path)`: Load generator data from a CSV file.
+        - `get_generators()`: Return the list of Generator objects.
+        - `display_generators()`: Display the generator data in a tabular format.
     """
 
     def __init__(self):
@@ -23,6 +23,14 @@ class InputLoader:
         
 
     def load_data_from_user(self):
+        """Load generator data from user input.
+        Prompts the user to enter the number of generators and their details.
+        
+        Returns:
+        --------
+        None
+        """
+
         num_generators = int(input("Enter the number of generators: "))
         for i in range(num_generators):
             print(f"Enter details for generator {i + 1}:")
@@ -39,6 +47,23 @@ class InputLoader:
 
 
     def load_data_from_file(self,file_path):
+        """
+        Load generator data from a CSV file.
+        The CSV file should have the following columns:
+            - Gen_ID
+            - Min_Capacity
+            - Max_Capacity
+            - a
+            - b
+            - c
+        Parameters:
+        -----------
+        `file_path (str)`: Path to the CSV file.
+
+        Returns:
+        --------
+        None
+        """
         data = pd.read_csv(file_path)
         for index, row in data.iterrows():
             gen_id = row['Gen_ID']
