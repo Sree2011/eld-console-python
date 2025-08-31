@@ -99,8 +99,8 @@
 </span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="sd">    </span>
 </span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">    Methods:</span>
 </span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="sd">    --------</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">        - `calculate_cost(power)`: Calculate the cost for a given power output.</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">        - `validate_power(power)`: Validate if the given power is within the generator&#39;s capacity limits.</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">    - `calculate_cost(power)`: Calculate the cost for a given power output.</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">    - `validate_power(power)`: Validate if the given power is within the generator&#39;s capacity limits.</span>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gen_id</span><span class="p">,</span><span class="n">min_capacity</span><span class="p">,</span><span class="n">max_capacity</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
 </span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -108,12 +108,12 @@
 </span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>
 </span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd">        Parameters:</span>
 </span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="sd">        -----------</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">            - `gen_id (str)`: The unique identifier for the generator.</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="sd">            - `min_capacity (float)`: The minimum capacity of the generator.</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">            - `max_capacity (float)`:The maximum capacity of the generator.</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">            - `a (float)`: The quadratic cost coefficient.</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">            - `b (float)`: The linear cost coefficient.</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">            - `c (float)`: The constant cost coefficient.</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">        - `gen_id (str)`: The unique identifier for the generator.</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="sd">        - `min_capacity (float)`: The minimum capacity of the generator.</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">        - `max_capacity (float)`:The maximum capacity of the generator.</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">        - `a (float)`: The quadratic cost coefficient.</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">        - `b (float)`: The linear cost coefficient.</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">        - `c (float)`: The constant cost coefficient.</span>
 </span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
 </span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">        Returns:</span>
 </span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">        --------</span>
@@ -204,8 +204,8 @@
 </span><span id="Generator-14"><a href="#Generator-14"><span class="linenos">14</span></a><span class="sd">    </span>
 </span><span id="Generator-15"><a href="#Generator-15"><span class="linenos">15</span></a><span class="sd">    Methods:</span>
 </span><span id="Generator-16"><a href="#Generator-16"><span class="linenos">16</span></a><span class="sd">    --------</span>
-</span><span id="Generator-17"><a href="#Generator-17"><span class="linenos">17</span></a><span class="sd">        - `calculate_cost(power)`: Calculate the cost for a given power output.</span>
-</span><span id="Generator-18"><a href="#Generator-18"><span class="linenos">18</span></a><span class="sd">        - `validate_power(power)`: Validate if the given power is within the generator&#39;s capacity limits.</span>
+</span><span id="Generator-17"><a href="#Generator-17"><span class="linenos">17</span></a><span class="sd">    - `calculate_cost(power)`: Calculate the cost for a given power output.</span>
+</span><span id="Generator-18"><a href="#Generator-18"><span class="linenos">18</span></a><span class="sd">    - `validate_power(power)`: Validate if the given power is within the generator&#39;s capacity limits.</span>
 </span><span id="Generator-19"><a href="#Generator-19"><span class="linenos">19</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="Generator-20"><a href="#Generator-20"><span class="linenos">20</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gen_id</span><span class="p">,</span><span class="n">min_capacity</span><span class="p">,</span><span class="n">max_capacity</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
 </span><span id="Generator-21"><a href="#Generator-21"><span class="linenos">21</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -213,12 +213,12 @@
 </span><span id="Generator-23"><a href="#Generator-23"><span class="linenos">23</span></a>
 </span><span id="Generator-24"><a href="#Generator-24"><span class="linenos">24</span></a><span class="sd">        Parameters:</span>
 </span><span id="Generator-25"><a href="#Generator-25"><span class="linenos">25</span></a><span class="sd">        -----------</span>
-</span><span id="Generator-26"><a href="#Generator-26"><span class="linenos">26</span></a><span class="sd">            - `gen_id (str)`: The unique identifier for the generator.</span>
-</span><span id="Generator-27"><a href="#Generator-27"><span class="linenos">27</span></a><span class="sd">            - `min_capacity (float)`: The minimum capacity of the generator.</span>
-</span><span id="Generator-28"><a href="#Generator-28"><span class="linenos">28</span></a><span class="sd">            - `max_capacity (float)`:The maximum capacity of the generator.</span>
-</span><span id="Generator-29"><a href="#Generator-29"><span class="linenos">29</span></a><span class="sd">            - `a (float)`: The quadratic cost coefficient.</span>
-</span><span id="Generator-30"><a href="#Generator-30"><span class="linenos">30</span></a><span class="sd">            - `b (float)`: The linear cost coefficient.</span>
-</span><span id="Generator-31"><a href="#Generator-31"><span class="linenos">31</span></a><span class="sd">            - `c (float)`: The constant cost coefficient.</span>
+</span><span id="Generator-26"><a href="#Generator-26"><span class="linenos">26</span></a><span class="sd">        - `gen_id (str)`: The unique identifier for the generator.</span>
+</span><span id="Generator-27"><a href="#Generator-27"><span class="linenos">27</span></a><span class="sd">        - `min_capacity (float)`: The minimum capacity of the generator.</span>
+</span><span id="Generator-28"><a href="#Generator-28"><span class="linenos">28</span></a><span class="sd">        - `max_capacity (float)`:The maximum capacity of the generator.</span>
+</span><span id="Generator-29"><a href="#Generator-29"><span class="linenos">29</span></a><span class="sd">        - `a (float)`: The quadratic cost coefficient.</span>
+</span><span id="Generator-30"><a href="#Generator-30"><span class="linenos">30</span></a><span class="sd">        - `b (float)`: The linear cost coefficient.</span>
+</span><span id="Generator-31"><a href="#Generator-31"><span class="linenos">31</span></a><span class="sd">        - `c (float)`: The constant cost coefficient.</span>
 </span><span id="Generator-32"><a href="#Generator-32"><span class="linenos">32</span></a>
 </span><span id="Generator-33"><a href="#Generator-33"><span class="linenos">33</span></a><span class="sd">        Returns:</span>
 </span><span id="Generator-34"><a href="#Generator-34"><span class="linenos">34</span></a><span class="sd">        --------</span>
@@ -295,9 +295,10 @@
 
 <h2 id="methods">Methods:</h2>
 
-<pre><code>- `calculate_cost(power)`: Calculate the cost for a given power output.
-- `validate_power(power)`: Validate if the given power is within the generator's capacity limits.
-</code></pre>
+<ul>
+<li><code>calculate_cost(power)</code>: Calculate the cost for a given power output.</li>
+<li><code>validate_power(power)</code>: Validate if the given power is within the generator's capacity limits.</li>
+</ul>
 </div>
 
 
@@ -317,12 +318,12 @@
 </span><span id="Generator.__init__-23"><a href="#Generator.__init__-23"><span class="linenos">23</span></a>
 </span><span id="Generator.__init__-24"><a href="#Generator.__init__-24"><span class="linenos">24</span></a><span class="sd">        Parameters:</span>
 </span><span id="Generator.__init__-25"><a href="#Generator.__init__-25"><span class="linenos">25</span></a><span class="sd">        -----------</span>
-</span><span id="Generator.__init__-26"><a href="#Generator.__init__-26"><span class="linenos">26</span></a><span class="sd">            - `gen_id (str)`: The unique identifier for the generator.</span>
-</span><span id="Generator.__init__-27"><a href="#Generator.__init__-27"><span class="linenos">27</span></a><span class="sd">            - `min_capacity (float)`: The minimum capacity of the generator.</span>
-</span><span id="Generator.__init__-28"><a href="#Generator.__init__-28"><span class="linenos">28</span></a><span class="sd">            - `max_capacity (float)`:The maximum capacity of the generator.</span>
-</span><span id="Generator.__init__-29"><a href="#Generator.__init__-29"><span class="linenos">29</span></a><span class="sd">            - `a (float)`: The quadratic cost coefficient.</span>
-</span><span id="Generator.__init__-30"><a href="#Generator.__init__-30"><span class="linenos">30</span></a><span class="sd">            - `b (float)`: The linear cost coefficient.</span>
-</span><span id="Generator.__init__-31"><a href="#Generator.__init__-31"><span class="linenos">31</span></a><span class="sd">            - `c (float)`: The constant cost coefficient.</span>
+</span><span id="Generator.__init__-26"><a href="#Generator.__init__-26"><span class="linenos">26</span></a><span class="sd">        - `gen_id (str)`: The unique identifier for the generator.</span>
+</span><span id="Generator.__init__-27"><a href="#Generator.__init__-27"><span class="linenos">27</span></a><span class="sd">        - `min_capacity (float)`: The minimum capacity of the generator.</span>
+</span><span id="Generator.__init__-28"><a href="#Generator.__init__-28"><span class="linenos">28</span></a><span class="sd">        - `max_capacity (float)`:The maximum capacity of the generator.</span>
+</span><span id="Generator.__init__-29"><a href="#Generator.__init__-29"><span class="linenos">29</span></a><span class="sd">        - `a (float)`: The quadratic cost coefficient.</span>
+</span><span id="Generator.__init__-30"><a href="#Generator.__init__-30"><span class="linenos">30</span></a><span class="sd">        - `b (float)`: The linear cost coefficient.</span>
+</span><span id="Generator.__init__-31"><a href="#Generator.__init__-31"><span class="linenos">31</span></a><span class="sd">        - `c (float)`: The constant cost coefficient.</span>
 </span><span id="Generator.__init__-32"><a href="#Generator.__init__-32"><span class="linenos">32</span></a>
 </span><span id="Generator.__init__-33"><a href="#Generator.__init__-33"><span class="linenos">33</span></a><span class="sd">        Returns:</span>
 </span><span id="Generator.__init__-34"><a href="#Generator.__init__-34"><span class="linenos">34</span></a><span class="sd">        --------</span>
@@ -349,13 +350,14 @@
 
 <h2 id="parameters">Parameters:</h2>
 
-<pre><code>- `gen_id (str)`: The unique identifier for the generator.
-- `min_capacity (float)`: The minimum capacity of the generator.
-- `max_capacity (float)`:The maximum capacity of the generator.
-- `a (float)`: The quadratic cost coefficient.
-- `b (float)`: The linear cost coefficient.
-- `c (float)`: The constant cost coefficient.
-</code></pre>
+<ul>
+<li><code>gen_id (str)</code>: The unique identifier for the generator.</li>
+<li><code>min_capacity (float)</code>: The minimum capacity of the generator.</li>
+<li><code>max_capacity (float)</code>:The maximum capacity of the generator.</li>
+<li><code>a (float)</code>: The quadratic cost coefficient.</li>
+<li><code>b (float)</code>: The linear cost coefficient.</li>
+<li><code>c (float)</code>: The constant cost coefficient.</li>
+</ul>
 
 <h2 id="returns">Returns:</h2>
 
