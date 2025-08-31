@@ -65,10 +65,9 @@ classDiagram
     Main -- Generator : uses
     InputLoader -- Generator : uses
 end
-
 ```
 
 
 # References
-[1] Power System Analysis by Hadi Saadat, 2010 edition
-[2] IEEE 10-generator bus system
+1. Power System Analysis by Hadi Saadat, 2010 edition
+2. IEEE 10-generator bus system
