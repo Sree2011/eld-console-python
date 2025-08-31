@@ -56,7 +56,7 @@ class InputLoader:
         - a
         - b
         - c
-        
+
         Parameters:
         -----------
         `file_path (str)`: Path to the CSV file.
@@ -77,9 +77,22 @@ class InputLoader:
             self.generators.append(generator)
 
     def get_generators(self):
+        """
+        Return the list of Generator objects.
+
+        Returns:
+        --------
+        `list`: List of Generator objects.
+        """
         return self.generators
 
     def display_generators(self):
+        """
+        Display the generator data in a tabular format.
+        Returns:
+        --------
+        `DataFrame`: Pandas DataFrame containing generator data.
+        """
         table = []
         for gen in self.generators:
             table.append([gen.gen_id, gen.min_capacity, gen.max_capacity, gen.a, gen.b, gen.c])
